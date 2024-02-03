@@ -7,22 +7,37 @@
 :root {
   /* COLORS  */
   /* primary */
-  --primary-0: #f0efff;
+  /* --primary-0: #f0efff;
   --primary-50: #d8d6ff;
   --primary-100: #c1beff;
   --primary-200: #aaa5ff;
   --primary-300: #938dff;
-  --primary-400: #7b74ff;
+  --primary-400: #7b74ff; */
+
+  --primary-0: #e6f7ff;
+  --primary-50: #b3e0ff;
+  --primary-100: #80ccff;
+  --primary-200: #4da6e6;
+  --primary-300: #2677a2;
+  --primary-400: #1a5276;
   /* main */
-  --primary-500: #645cff;
+  /* --primary-500: #645cff;
   --primary-600: #554ed9;
   --primary-700: #4640b3;
   --primary-800: #37338c;
   --primary-900: #282566;
   --primary-1000: #191740;
-  --primary-1100: #0a0919;
+  --primary-1100: #0a0919; */
+
+  --primary-500: #003366;
+  --primary-600: #00284d;
+  --primary-700: #001a33;
+  --primary-800: #000d19;
+  --primary-900: #00060c;
+  --primary-1000: #000000;
+  --primary-1100: #000000;
   /* grey */
-  --grey-0: #fafbfc;
+  /* --grey-0: #fafbfc;
   --grey-50: #f2f4f8;
   --grey-100: #eaedf3;
   --grey-200: #e2e7ef;
@@ -34,28 +49,69 @@
   --grey-800: #70747c;
   --grey-900: #51545a;
   --grey-1000: #333538;
-  --grey-1100: #141516;
+  --grey-1100: #141516; */
+
+  --grey-0: #f5f5f5;
+  --grey-50: #e0e0e0;
+  --grey-100: #cccccc;
+  --grey-200: #b3b3b3;
+  --grey-300: #999999;
+  --grey-400: #808080;
+  --grey-500: #666666;
+  --grey-600: #4d4d4d;
+  --grey-700: #333333;
+  --grey-800: #1a1a1a;
+  --grey-900: #000000;
+  --grey-1000: #000000;
+  --grey-1100: #000000;
 
   /* rest */
-  --black: #222;
+  /* --black: #222;
   --white: #fff;
   --red-light: #f8d7da;
   --red-dark: #842029;
   --green-light: #d1e7dd;
-  --green-dark: #0f5132;
+  --green-dark: #0f5132; */
+
+  --black: #000000;
+  --white: #ffffff;
+  --red-light: #ffcccc;
+  --red-dark: #990000;
+  --green-light: #ccffcc;
+  --green-dark: #006600;
 
   /* typography */
   --headingFont: 'Inconsolata', monospace;
   --bodyFont: 'Montserrat', sans-serif;
   --smallText: 0.7em;
   /* rest */
-  --backgroundColor: var(--grey-50);
+  /* --backgroundColor: var(--grey-50); */
+  /* --background-color: #f0f5fd; */
+  --background-color: #f4f4f4;
   --textColor: var(--grey-1000);
   --borderRadius: 0.25rem;
   --letterSpacing: 1px;
   --transition: 0.3s ease-in-out all;
   --max-width: 1120px;
   --fixed-width: 600px;
+  --background-gradient: linear-gradient(135deg, #74ebd5, #acb6e5);
+  --form-background-pattern: linear-gradient(
+      45deg,
+      #f8f9fa 25%,
+      transparent 25%,
+      transparent 75%,
+      #f8f9fa 75%,
+      #f8f9fa
+    ),
+    linear-gradient(
+      45deg,
+      #f8f9fa 25%,
+      transparent 25%,
+      transparent 75%,
+      #f8f9fa 75%,
+      #f8f9fa
+    );
+
   /* box shadows */
   --shadow-1: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
   --shadow-2: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
@@ -71,7 +127,7 @@ html {
 }
 
 body {
-  background: var(--backgroundColor);
+  background: var(--background-gradient);
   color: var(--textColor);
   font-family: var(--bodyFont);
   font-weight: 400;
@@ -141,7 +197,8 @@ a {
   border: none;
   border-radius: var(--borderRadius);
   letter-spacing: var(--letterSpacing);
-  padding: 0.375rem 0.75rem;
+  /* padding: 0.375rem 0.75rem; */
+  padding: 0.75rem 1.5rem; /* Adjust padding for a more prominent button */
   box-shadow: var(--shadow-1);
   transition: var(--transition);
   text-transform: capitalize;
@@ -151,6 +208,9 @@ a {
   color: var(--white);
   background: var(--primary-700);
   box-shadow: var(--shadow-2);
+  transform: scale(
+    1.05
+  ); /* Add a slight scale effect on hover for a subtle animation */
 }
 button.small {
   padding: 0.25rem 0.5rem;
@@ -174,10 +234,14 @@ button.block {
 *************/
 form {
   width: 100%;
-  background: var(--white);
+  /* background: var(--white);
   border-radius: var(--borderRadius);
-  box-shadow: var(--shadow-2);
+  box-shadow: var(--shadow-2); */
   padding: 2rem 2.5rem;
+
+  background: var(--form-background-pattern); /* Change background color */
+  border-radius: 0.5rem; /* Add more rounded corners */
+  box-shadow: var(--shadow-2); /* Add a subtle box-shadow */
 }
 label {
   display: block;
@@ -341,14 +405,18 @@ form > :last-child {
   gap: 1rem;
 }
 .single-task {
-  padding: 1rem 2.5rem;
-  background: var(--white);
+  /* padding: 1rem 2.5rem; */
+  /* background: var(--white); */
   border-radius: var(--borderRadius);
-  box-shadow: var(--shadow-2);
+  /* box-shadow: var(--shadow-2); */
   transition: var(--transition);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1.5rem 2.5rem; /* Adjust padding for better spacing */
+  /* background: var(--white);  */
+  background: var(--form-background-pattern);
+  box-shadow: var(--shadow-3); /* Add a bit more shadow */
 }
 .single-task:hover {
   box-shadow: var(--shadow-4);
